@@ -1,0 +1,47 @@
+.navbar {
+    background-color: red; 
+}
+  
+.navbar-nav .nav-link {
+    color: white; 
+    transition: color 0.3s; 
+}
+
+.navbar-brand:hover {
+  color: black; 
+}
+
+@font-face {
+    font-family: 'Pacifico';
+    font-weight: bold;
+    src: url('https://fonts.gstatic.com/s/pacifico/v14/FwZY7-Qmy14u9lezJ-6H6MmBp0u-.woff2') format('woff2'); 
+  }
+  
+  .navbar-light .navbar-brand {
+    font-family: 'Pacifico', sans-serif; 
+    margin-right: 20px; 
+  }
+
+.navbar-light .navbar-nav .nav-link {
+  color: white; 
+  transition: background-color 0.5s, color 0.5s, border-radius 0.5s, box-shadow 0.3s; 
+  margin-right: 20px;
+  border-radius: 0; 
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+  background-color: black;
+  color: white;
+  margin-right: 20px;
+  border-radius: 15px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 1.0); 
+}
+  
+.navbar-light .navbar-nav .nav-link.active {
+  background-color: black; 
+  color: white; 
+  margin-right: 20px;
+  border-radius: 15px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+}
+

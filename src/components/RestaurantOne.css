@@ -1,0 +1,432 @@
+.full-container {
+  background-color: #f8f8f800; 
+  overflow: auto;
+  min-height: calc(100vh - 100px);
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start; 
+  height: 100vh; 
+  background-color: rgba(0, 0, 0, 0); 
+  width: 100%; 
+  padding: 20px; 
+  margin-bottom: 40px;
+  overflow: auto;
+}
+
+.info-container::-webkit-scrollbar {
+  width: 12px;
+}
+
+.info-container::-webkit-scrollbar-thumb {
+  background-color: transparent; 
+}
+
+.info-container::-webkit-scrollbar-track {
+  background-color: transparent; 
+}
+
+.name-container {
+  color: white;
+  width: 1000px;
+  height: 450px; 
+  border-radius: 10px;
+  position: relative;
+  margin-top: 20px; 
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.restaurant-name {
+  height: 300px; /* Adjust the height as needed */
+  width: 100%; /* Use 100% width or set a specific width as needed */
+  margin-top: 20px;
+  background-color: rgba(47, 47, 47, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-shadow: rgba(255, 255, 255, 0.8);
+  text-align: left;
+  background-size: cover;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
+}
+
+.restaurant-name:hover {
+  transform: scale(1.05);
+}
+
+.name {
+  font-size: 45px;
+  margin-left: 10px;
+  text-align: left;
+  margin-bottom: 10px; /* Add margin-bottom for spacing */
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  padding: 20px;
+  color: #ccc;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 0 0 15px 15px;
+  box-sizing: border-box;
+}
+
+.subname {
+  font-size: 20px;
+  margin-left: 10px;
+  text-align: left;
+  margin-bottom: 20px; /* Add margin-bottom for spacing */
+  position: absolute;
+  left: 0;
+  padding: 20px;
+  color: #ccc;
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.9);
+  border-radius: 0 0 15px 15px;
+  box-sizing: border-box;
+}
+
+.subname.first {
+  bottom: -10px;
+}
+
+.subname.second {
+  bottom: -35px;
+}
+
+.about{
+  font-size: 45px;
+  margin-left: 10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.about-description {
+  font-size: 18px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.rating-reviews {
+  font-size: 36px;
+  margin-left:10px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.rating-reviews-description {
+  font-size: 20px;
+  margin-left:10px;
+  text-align: left;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.rating-reviews-description span {
+  margin-right: 10px; 
+}
+
+.rating-reviews-description button {
+  font-size: 16px; 
+  padding: 5px 10px; 
+  border-color: #007bff;
+  background-color: #00000000; 
+  border-radius: 10px;
+  color: #fff; 
+  border: 2px solid #007bff; 
+  cursor: pointer;
+}
+
+.rating-reviews-description button:hover {
+  border-color: #0056b3; 
+}
+
+i{
+  font-size: 18px;
+  text-align: left;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.reviews-list {
+  list-style: none; 
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.review-item {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd; /* Add a border for a separation effect */
+  border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+.review-item p {
+  margin: 0;
+}
+
+.reviews-section {
+  margin-top: 20px;
+}
+
+.reviews-list {
+  margin-bottom: 10px;
+}
+
+.review-item {
+  list-style-type: none;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
+}
+
+.review-input {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+/* Style for the textarea input */
+.review-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #000000ac;
+  color: #ccc;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical; /* Allow vertical resizing of textarea */
+}
+
+/* Style for the "Add Review" button */
+.add-review-button {
+  border-color: #007bff;
+  background-color: #00000000;
+  color: #ffffff;
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  height: min-content;
+}
+
+.add-review-button:hover {
+  border-color: #0056b3;
+}
+
+.read-more-button {
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  background-color: #00000000;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: none;
+}
+
+.book-container {
+  margin-top: 40px; /* Adjusted for spacing */
+  width: 375px;
+  height: auto; /* Adjusted to auto height */
+  background-color: #000000ac; /* Change to a consistent background color */
+  border-radius: 10px;
+  position: relative;
+  padding: 20px; /* Added padding for better spacing */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Added box shadow for depth */
+  flex-direction: row;
+  transition: transform 0.3s ease-in-out;
+}
+
+.book-container:hover {
+  transform: scale(1.05);
+}
+
+.about-restaurant,
+.restaurant-photos {
+  margin-top: 20px; 
+  background-color: rgba(0, 0, 0, 0.7); 
+  border-radius: 10px;
+  padding: 20px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  color: white;
+  text-align: center;  
+  transition: transform 0.3s ease-in-out;
+}
+
+.about-restaurant:hover,
+.restaurant-photos:hover {
+  transform: scale(1.05);
+}
+
+.input-group1 select {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 25px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.input-group1 {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.react-datepicker {
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the date input field */
+.react-datepicker__input-container input {
+  width: 100%;
+  padding: 12px; /* Adjusted padding for better spacing */
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #8c8c8c7e; /* Background color for the input field */
+  color: #ffffff; /* Text color for the input field */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Styling for the placeholder text */
+.react-datepicker-wrapper input::placeholder {
+  color: #dddddd; /* Placeholder text color */
+}
+
+.input-group {
+  background-color: #ffffff00; /* White background color */
+  color: #000000; /* Text color */
+  border-radius: 8px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+.input-group .btn-container {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+
+}
+
+.input-group .btn-row {
+  align-items: center;
+  margin-left: 95px;
+  margin-bottom: 30px;
+}
+
+.input-group button {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  background-color: #000000;
+  color: #fff;
+  border: 3px solid;
+  border-radius: 50px;
+  border-color: #ff00009a;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.input-group button:hover {
+  border-color: #ff0000;
+}
+
+.input-group span {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.rectangle {
+  width: 100px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: black;
+  text-align: center;
+  float: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  border-top: 2px solid #80ff86;
+  border-left: 2px solid #80ff86;
+  border-bottom: 2px solid #438b47;
+  border-right: 2px solid #438b47;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: border-color 0.3s ease-in-out, 
+  background-color 0.3s ease-in-out, 
+  color 0.3s ease-in-out;
+}
+
+.rectangle:hover {
+  border-color: rgb(40, 115, 0); /* Darker green on hover */
+}
+
+.rectangle:active,
+.rectangle:focus {
+  background-color: #438b47; /* Background color when clicked or focused */
+  border-color: #fff; /* Border color when clicked or focused */
+  color: black; /* Text color when clicked or focused */
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(45, 45, 45, 0.564);
+}
+
+.rectangle2{
+  margin-bottom: 20px;
+  width: 225px;
+  height: 225px;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  justify-content: space-around;
+  /* align-items: center; */
+  text-align: center;
+  float: center;
+  margin-left: 75px;
+  margin-top: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.rectangle2:hover {
+  transform: scale(1.05);
+}
+
+body{
+  margin-bottom: 100px;
+}
+
+.book-table-button {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #db3434; 
+  color: #000000; 
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 40px;
+}
+
+.book-table-button:hover {
+  background-color: #ff9191; 
+}

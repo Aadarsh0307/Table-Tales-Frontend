@@ -1,0 +1,111 @@
+.btn-orange {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-orange:hover {
+  background-color: #e64e2c;
+}
+
+.form-control {
+  width: 100%;
+  max-width: 300 px;
+}
+
+.page-container {
+  background-color: #f4f4f4;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-container {
+  background: #ffffff;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s;
+}
+
+.form-container:hover {
+  transform: scale(1.02);
+}
+
+.form-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  margin-bottom: 20px;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.register-button {
+  text-align: center;
+}
+
+.error-message {
+  color: red;
+}
+
+.eye-icon-black {
+  color: black;
+}
+
+.login-link {
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 12px;
+  transition: color 0.3s;
+}
+
+.login-link:hover {
+  color: rgb(158, 106, 106);
+  text-decoration: bolder;
+}
+
+.table-tales-heading {
+  font-family: 'Pacifico', sans-serif;
+  font-size: 48px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.table-tales-link {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card {
+  margin-bottom: 60px;
+}
+
+.gradient-background {
+  background: linear-gradient(to bottom, #ffffff, #ededed);
+}
+
+.input-field label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-in-out;
+}
