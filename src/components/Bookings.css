@@ -7,6 +7,7 @@
   margin: auto;
   background: black;
   background-color: black;
+  min-height: 700px;
 }
 
 .booking-heading{

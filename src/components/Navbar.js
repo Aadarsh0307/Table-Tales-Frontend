@@ -13,25 +13,26 @@ function Navigationbar() {
   const [isloggedin, setIsLoggedIn] = useState(false)
   const [isadmin, setIsAdmin] = useState(false)
 
-  const handleLogout = () => {
+  const handleLogout = async() => {
     const isConfirmed = window.confirm('Are you sure you want to log out?');
 
     if (isConfirmed) {
       alert('Logging out...');
-      Axios.post("http://localhost:3000/logout", { data: 1 }, {
+      await Axios.post("https://table-tales-backend.onrender.com/logout", { data: 1 }, {
         withCredentials: true
       })
         .then((res) => {
-          if (res.status == "200") {
+          if (res.status === 200) {
             nav('/');
-            window.location.reload(true)
+            window.location.reload(true);
+            setIsLoggedIn(false);setIsAdmin(false)
           }
         })
     }
   };
   useEffect(() => {
 
-    Axios.post('http://localhost:3000/user', { data: 1 }, {
+    Axios.post('https://table-tales-backend.onrender.com/user', { data: 1 }, {
       withCredentials: true
     })
       .then((res) => {
@@ -41,10 +42,10 @@ function Navigationbar() {
         }
       })
       .catch(err => console.log(err))
-  }, [isloggedin])
+  }, [])
 
   useEffect(() => {
-    Axios.post('http://localhost:3000/admin', { data: 1 }, {
+    Axios.post('https://table-tales-backend.onrender.com/admin', { data: 1 }, {
       withCredentials: true
     })
       .then((res) => {
@@ -56,7 +57,7 @@ function Navigationbar() {
       })
       .catch(err => console.log(err))
 
-  }, [isadmin])
+  }, [])
 
   return (
 

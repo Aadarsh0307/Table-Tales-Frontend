@@ -62,7 +62,7 @@ const Dashboard = () => {
 
   useEffect(()=>{
 
-    Axios.get('http://localhost:3000/findRestaurantAdmin',{
+    Axios.get('https://table-tales-backend.onrender.com/findRestaurantAdmin',{
       withCredentials:true
     })
     .then((res)=>{
@@ -82,7 +82,7 @@ const Dashboard = () => {
     if (isConfirmed) {
     alert('Logging out...');
 
-    Axios.post('http://localhost:3000/logout',{ans:1},
+    Axios.post('https://table-tales-backend.onrender.com/logout',{ans:1},
     {
       withCredentials:true
     })

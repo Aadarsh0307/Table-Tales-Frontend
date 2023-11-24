@@ -8,7 +8,7 @@ function SearchBar() {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    Axios.post('http://localhost:3000/user', {ans:1},
+    Axios.post('https://table-tales-backend.onrender.com/user', {ans:1},
     {
       withCredentials:true
     })

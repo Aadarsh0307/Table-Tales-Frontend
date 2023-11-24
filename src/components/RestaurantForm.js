@@ -134,7 +134,7 @@ const RestaurantForm = ({ isOpen, closeModalProp }) => {
       }
     }
 
-    Axios.post('http://localhost:3000/newRestaurant', {
+    Axios.post('https://table-tales-backend.onrender.com/newRestaurant', {
       Name:formData.name,
       City:formData.city,
       Address:formData.address,

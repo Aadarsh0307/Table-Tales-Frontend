@@ -21,14 +21,16 @@ function AdminLogin() {
     // Handle sign-in logic here
     console.log('Form data submitted:', formData);
 
-    Axios.post('http://localhost:3000/adminLogin', formData,{
+    Axios.post('https://table-tales-backend.onrender.com/adminLogin', formData,{
       withCredentials:true
     })
     .then((res)=>{
       if(res.status === 200)
       {
         console.log("Successfully logged in")
+        
         nav('/admin-dashboard');
+        window.location.reload(true)
       
       }
     })

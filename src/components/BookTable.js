@@ -51,7 +51,7 @@ function BookTable() {
   const restaurantRows = chunkArray(data, 3);
 
   const handleData = () => {
-    Axios.post('http://localhost:3000/filterCategory', {
+    Axios.post('https://table-tales-backend.onrender.com/filterCategory', {
       category: category,
       cuisine: cuisine,
       price: price,

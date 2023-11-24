@@ -22,7 +22,7 @@ function ProfilePage() {
   useEffect(() => {
 
    
-    Axios.post('http://localhost:3000/user', { ans: "yes" }, {
+    Axios.post('https://table-tales-backend.onrender.com/user', { ans: "yes" }, {
       withCredentials: true,
 
     })
@@ -41,9 +41,9 @@ function ProfilePage() {
     setIsEditing(true);
   };
 
-  const handleLogout = () =>{
+  const handleLogout = async() =>{
 
-    Axios.post("http://localhost:3000/logout",{data:1}, {
+    await Axios.post("https://table-tales-backend.onrender.com/logout",{data:1}, {
       withCredentials:true
     })
     .then((res)=>{
@@ -59,7 +59,7 @@ function ProfilePage() {
     // Make API calls to update the data on the backend with the new values
     // After successful updates, set setIsEditing(false);
     alert('Saving changes...');
-    Axios.post('http://localhost:3000/update', {
+    Axios.post('https://table-tales-backend.onrender.com/update', {
       Name: newUsername, Email: newEmail, PhoneNumber: newPhoneNumber,
       ProfilePic: profilePicture
     }
@@ -121,7 +121,7 @@ function ProfilePage() {
     // Placeholder for canceling the current booking
     alert('Canceling the current booking...');
     
-    Axios.post('http://localhost:3000/cancelBooking', {bid:e.target.id})
+    Axios.post('https://table-tales-backend.onrender.com/cancelBooking', {bid:e.target.id})
     .then((res)=>{
       if(res.status == 200)
       {
@@ -139,7 +139,7 @@ function ProfilePage() {
 
   const handleClear = () =>{
 
-    Axios.put('http://localhost:3000/clearPastBookings',{data:1},
+    Axios.put('https://table-tales-backend.onrender.com/clearPastBookings',{data:1},
     {
       withCredentials:true
     })
@@ -158,7 +158,7 @@ function ProfilePage() {
   useEffect(() => {
     // Mock data for demonstration
 
-    Axios.get('http://localhost:3000/getBookings', {
+    Axios.get('https://table-tales-backend.onrender.com/getBookings', {
       withCredentials: true
     })
       .then((res) => {

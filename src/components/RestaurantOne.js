@@ -25,7 +25,7 @@ function RestaurantOne() {
   });
   const [data, setData] = useState();
   const { id } = useParams();
-  const [loaded, setLoaded] = useState(false)
+  
   const [date, setDate] = useState("")
 
   useEffect(()=>{
@@ -39,10 +39,10 @@ function RestaurantOne() {
 
     const fetchData = async () => {
       try {
-        const response = await Axios.get(`http://localhost:3000/restaurants/${id}`);
+        const response = await Axios.get(`https://table-tales-backend.onrender.com/restaurants/${id}`);
         if (isMounted && response.status === 200) {
           setData(response.data);
-          setLoaded(true);
+          
           setReviews(response.data.Reviews)
         }
       } catch (error) {
@@ -57,7 +57,7 @@ function RestaurantOne() {
     return () => {
       isMounted = false;
     };
-  }, [id, setLoaded, setData]); // Include dependencies in the array
+  }, [id,  setData]); // Include dependencies in the array
 
   
 
@@ -117,7 +117,7 @@ function RestaurantOne() {
 
     console.log(calculateAverageRating())
     
-    Axios.post('http://localhost:3000/updateReview', {
+    Axios.post('https://table-tales-backend.onrender.com/updateReview', {
       rid:data._id,
       rating:userRating,
       comment:newReview,
@@ -189,7 +189,7 @@ function RestaurantOne() {
     console.log(tables); 
     console.log(time);
 
-    Axios.post('http://localhost:3000/bookSlot', {
+    Axios.post('https://table-tales-backend.onrender.com/bookSlot', {
       R_ID:data._id,
       Day:date,
       Slot:time,

@@ -12,7 +12,7 @@ function AdminProfile() {
     // Make API calls to update the data on the backend with the new values
     // After successful updates, set setIsEditing(false);
     alert('Saving changes...');
-    Axios.post('http://localhost:3000/updateAdmin', {
+    Axios.post('https://table-tales-backend.onrender.com/updateAdmin', {
       Name: newUsername, Email: newEmail, PhoneNumber: newPhoneNumber,
       ProfilePic: profilePicture
     }
@@ -81,7 +81,7 @@ function AdminProfile() {
 
   useEffect(() => {
 
-    Axios.post('http://localhost:3000/admin', { ans: "yes" },
+    Axios.post('https://table-tales-backend.onrender.com/admin', { ans: "yes" },
       {
         withCredentials: true
       })

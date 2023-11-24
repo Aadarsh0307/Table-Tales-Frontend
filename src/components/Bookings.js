@@ -13,7 +13,7 @@ const Bookings = () => {
 
   useEffect(()=>{
 
-    Axios.get('http://localhost:3000/getBookingDetails/'+id)
+    Axios.get('https://table-tales-backend.onrender.com/getBookingDetails/'+id)
     .then((res) =>{
       if(res.status === 200)
       { 

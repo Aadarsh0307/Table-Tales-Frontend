@@ -33,7 +33,7 @@ function Signup() {
     } else {
       console.log('Form data submitted:', formData);
       setPasswordMismatch(false);
-      Axios.post('http://localhost:3000/register', formData)
+      Axios.post('https://table-tales-backend.onrender.com/register', formData)
       .then((res) =>{
         if(res.status == 200)
         {

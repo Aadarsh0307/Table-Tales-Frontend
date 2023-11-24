@@ -11,7 +11,7 @@ const ReservationCard = ({ id,bid, email, phoneNumber, numberOfPeople, table, da
   const handlingCancelBooking = () => {
     alert('Canceling the current booking...');
 
-    Axios.post('http://localhost:3000/cancelBooking', {bid})
+    Axios.post('https://table-tales-backend.onrender.com/cancelBooking', {bid})
     .then((res)=>{
       if(res.status ===200)
       {
@@ -29,7 +29,7 @@ const ReservationCard = ({ id,bid, email, phoneNumber, numberOfPeople, table, da
 
   useEffect(()=>{
 
-    Axios.get('http://localhost:3000/user/'+id)
+    Axios.get('https://table-tales-backend.onrender.com/user/'+id)
     .then((res)=>{
       if(res.status === 200)
       {
