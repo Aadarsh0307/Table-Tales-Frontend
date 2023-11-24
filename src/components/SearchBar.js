@@ -1,10 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Axios from "axios";
 
 function SearchBar() {
   const [location, setLocation] = useState('');
-
+  const [isloggedin, setIsLoggedIn] = useState(false)
   const navigate = useNavigate();
+
+  useEffect(()=>{
+    Axios.post('http://localhost:3000/user', {ans:1},
+    {
+      withCredentials:true
+    })
+    .then((res)=>{
+      if(res.status === 200)
+      {
+        setIsLoggedIn(true)
+      }
+    })
+    .catch((err)=>console.log(err))
+  })
 
   const handleLocationChange = (e) => {
     setLocation(e.target.value);
@@ -14,7 +29,7 @@ function SearchBar() {
     // Handle the search functionality based on the 'location' state
     // You can use this location to filter restaurant results, for example
     console.log('Searching for:', location);
-    navigate('/book-table');
+    {isloggedin && navigate('/book-table');}
   };
 
   const searchBarStyle = {

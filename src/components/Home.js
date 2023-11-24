@@ -1,7 +1,17 @@
 import React from 'react';
 import SearchBar from './SearchBar';
+import { useState,useEffect } from 'react';
+import Axios from "axios"
 
 function Home() {
+
+    const [isloggedin,setIsLoggedIn] = useState(false)
+
+    useEffect(()=>{
+
+      
+    })
+
     const pageStyle = {
     background: `url(${process.env.PUBLIC_URL}/background.jpg)`,
     backgroundSize: 'cover',

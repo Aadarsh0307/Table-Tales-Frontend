@@ -98,19 +98,30 @@ function RestaurantOne() {
   const handleRatingChange = (rating) => {
     setUserRating(rating);
   };
-
+  
+ 
   function calculateAverageRating() {
-    const totalRating = reviews.reduce((acc, review) => acc + review.rating, 0);
-    const averageRating = totalRating / reviews.length || 0;
+    if (reviews.length === 0) {
+      return 0; // Return 0 if there are no reviews to avoid division by zero
+    }
+  
+    const totalRating = reviews.reduce((sum, review) => sum + parseFloat(review.Ratings), 0);
+    const averageRating = totalRating / reviews.length;
+
+  
     return averageRating.toFixed(1);
+
   }
 
   const handleAddReview = () => {
+
+    console.log(calculateAverageRating())
     
     Axios.post('http://localhost:3000/updateReview', {
       rid:data._id,
       rating:userRating,
-      comment:newReview
+      comment:newReview,
+      newRating:calculateAverageRating()
     },
     {
       withCredentials:true
@@ -251,7 +262,7 @@ function RestaurantOne() {
 
 
           <div className="rating-reviews">Rating & Reviews</div>
-          <i>Average Rating: {data && data.Ratings}</i>
+          <i>Average Rating: {calculateAverageRating()}</i>
           <div className="rating-reviews-description">
             <span>Rate the Restaurant: </span>
             <Rating

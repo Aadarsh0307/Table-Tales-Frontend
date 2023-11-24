@@ -1,19 +1,16 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState,useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import 'font-awesome/css/font-awesome.min.css';
-import Axios from 'axios';
-import './RestaurantLogin.css';
-import { useNavigate } from 'react-router-dom';
+import './AdminLogin.css';
+import Axios from "axios"
 
-function RestaurantLogin() {
-
-  const nav = useNavigate();
-
+function AdminLogin() {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
 
+  const nav = useNavigate();
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -22,41 +19,26 @@ function RestaurantLogin() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle sign-in logic here
-    
+    console.log('Form data submitted:', formData);
 
-    Axios.post('http://localhost:3000/login', formData,{
+    Axios.post('http://localhost:3000/adminLogin', formData,{
       withCredentials:true
     })
-    .then((res) =>{
-
-      console.log(res)
-      
+    .then((res)=>{
       if(res.status === 200)
       {
-        console.log("Successfull Logged In");
-        console.log(res)
-        nav('/book-table');
-        window.location.reload(true)
-      }
-
-      else {
-        console.log(res);
-        if (res.data.message) {
-          alert(res.data.message); // Display the error message from the server
-        } else {
-          alert("Invalid email or password"); // Fallback message
-        }
-      }
+        console.log("Successfully logged in")
+        nav('/admin-dashboard');
       
+      }
     })
-    .catch((err) =>{
+    .catch((err)=>{
       if (err.response && err.response.status === 401) {
         alert("Invalid email or password");
       } else {
         alert("An error occurred. Please try again.");
         console.error(err);
       }
-      
     })
   };
 
@@ -73,7 +55,7 @@ function RestaurantLogin() {
   };
 
   const pageStyle = {
-    background: `url(${process.env.PUBLIC_URL}/restaurant-img.jpg)`,
+    background: `url(${process.env.PUBLIC_URL}/adminbackground.jpg)`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center center',
     backgroundAttachment: 'fixed',
@@ -97,7 +79,7 @@ function RestaurantLogin() {
               </Link>
               <div className="card gradient-background form-container" style={formStyle}>
                 <div className="card-body">
-                  <h2 className="row justify-content-center text-light">Sign In to Your Account</h2>
+                  <h2 className="row justify-content-center text-light">Admin Login</h2>
                   <form onSubmit={handleSubmit}>
                     <div className="form-group" style={inputStyle}>
                       <label htmlFor="email">Email:</label>
@@ -148,12 +130,10 @@ function RestaurantLogin() {
                     </div>
                   </form>
                   <p className="mt-3 login-link">
-                    Don't have an account?{' '}
-                    <Link to="/signup">Sign Up</Link>
+                    Not an admin? <Link to="/restaurant-login">Go back to sign-in</Link>
                   </p>
                   <p className="mt-3 login-link">
-                    Admin Login?{' '}
-                    <Link to="/admin-login">Click here</Link>
+                    Want to be an admin? <Link to="/admin-signup">Sign up as admin</Link>
                   </p>
                 </div>
               </div>
@@ -165,4 +145,4 @@ function RestaurantLogin() {
   );
 }
 
-export default RestaurantLogin;
+export default AdminLogin;

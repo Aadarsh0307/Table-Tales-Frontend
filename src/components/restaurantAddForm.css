@@ -1,0 +1,135 @@
+.modal-container {
+  background:  #939393;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  width: 1500px;
+  height: 1250px;
+  transition: transform 0.3s, border 0.3s;
+  margin-top: 350px;
+  transform: translate(-50%, -50%);
+  position: absolute; /* Change from absolute to fixed */
+  top: 50%;
+  left: 50%;
+  z-index: 1000;
+  border: 2px solid transparent;
+  transition: 0.3s ease-in-out;
+}
+.modal-container:hover {
+  background: #d3d3d3;
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 24px;
+  text-align: center;
+}
+
+/* Modal form labels */
+.modal-label {
+  margin-top: 25px;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Modal form inputs, textarea, and select */
+.modal-input,
+.modal-textarea,
+.modal-select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+/* Textarea resizing */
+.modal-textarea {
+  resize: vertical;
+}
+
+/* Modal form buttons */
+.modal-button {
+  background-color: #ff5733;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto; /* Center the button */
+}
+
+.modal-button:hover {
+  background-color: #e64e2c;
+}
+
+/* Close button */
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  background-color: #afafafbc;
+  color: #ff0000;
+  font-size: 24px; /* Adjust the font size as needed */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0 ,0.6);
+  font-weight: bolder;
+  padding: 2px 12px;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  color: #000000e9;
+}
+
+/* Checkbox container */
+.cuisine-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+/* Checkbox input - hide default appearance */
+.cuisine-checkbox input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 4px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Checked state style */
+.cuisine-checkbox input:checked {
+  border-color: #007bff; /* Blue color when checked */
+  border: 2px solid #007bff;
+  border-radius: 50px;
+}
+
+/* Checkbox label */
+.cuisine-checkbox label {
+  font-weight: normal;
+  color: #495057;
+}
+
+/* Checked state style for the checkmark */
+.cuisine-checkbox input:checked + label::before {
+  content: '\2713'; /* Checkmark character */
+  font-size: 16px;
+  color: #000000; /* Color of the checkmark */
+  font-weight: bolder;
+  line-height: 18px;
+  margin-right: 4px;
+}

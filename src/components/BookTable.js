@@ -240,7 +240,7 @@ function BookTable() {
                           <div className="restaurant-card" >
                             <img src={restaurant.Images[0]} style={restaurantImage}/>
                             <div className="rating-badge">
-                              <span style={{ marginRight: '5px' }}>{parseFloat(restaurant.Ratings)}</span>
+                              <span style={{ marginRight: '5px' }}>{parseFloat(restaurant.Ratings ?restaurant.Ratings:0)}</span>
                               <FontAwesomeIcon icon={faStar} />
                             </div>
                             <div className="card-content">

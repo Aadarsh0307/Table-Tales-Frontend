@@ -131,7 +131,6 @@ h2 {
 .select-menu {
   position: absolute;
   z-index: 100; /* Adjust the value as needed */
-
   top: 30px;
   right: 20px;
 }
@@ -140,6 +139,7 @@ h2 {
   position: absolute;
   top: 30px;
   left: 20px;
+  
 }
 
 .select-menu span {
@@ -304,7 +304,7 @@ h2 {
   right: 0;
   padding: 5px;
   color: #ccc;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgb(0, 0, 0);
   border-radius: 0 0 10px 10px;
   box-sizing: border-box;
   border-bottom: 5px solid #555;
@@ -316,7 +316,7 @@ h2 {
   top: 10px;
   right: 10px;
   background-color: red;
-  border: 1px solid red;
+  border: 2px solid #ffcc00;
   color: #ffcc00;
   padding: 5px 10px;
   border-radius: 5px;

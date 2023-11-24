@@ -1,54 +1,83 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './Navbar.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Axios from "axios"
 
-function Navbar() {
-
+function Navigationbar() {
+  const nav = useNavigate();
   const [user, setUser] = useState();
   const [isloggedin, setIsLoggedIn] = useState(false)
+  const [isadmin, setIsAdmin] = useState(false)
 
-  const handleLogin = (us) =>{
-    setUser(us)
-  }
+  const handleLogout = () => {
+    const isConfirmed = window.confirm('Are you sure you want to log out?');
 
-  useEffect(() =>{
+    if (isConfirmed) {
+      alert('Logging out...');
+      Axios.post("http://localhost:3000/logout", { data: 1 }, {
+        withCredentials: true
+      })
+        .then((res) => {
+          if (res.status == "200") {
+            nav('/');
+            window.location.reload(true)
+          }
+        })
+    }
+  };
+  useEffect(() => {
 
-    Axios.post('http://localhost:3000/user', {data:1}, {
-      withCredentials:true
+    Axios.post('http://localhost:3000/user', { data: 1 }, {
+      withCredentials: true
     })
-    .then((res) =>{
-      console.log(res)
-        if(res.status != 401)
-        {
+      .then((res) => {
+        console.log(res)
+        if (res.status != 401) {
           setIsLoggedIn(true)
         }
-        
-    })
-    .catch(err => console.log(err))
+      })
+      .catch(err => console.log(err))
   }, [isloggedin])
-  
+
+  useEffect(() => {
+    Axios.post('http://localhost:3000/admin', { data: 1 }, {
+      withCredentials: true
+    })
+      .then((res) => {
+
+        if (res.status != 402) {
+          setIsAdmin(true)
+        }
+
+      })
+      .catch(err => console.log(err))
+
+  }, [isadmin])
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-red" style={{ paddingLeft: '20px' }}>
-      <NavLink className="navbar-brand text-white" to="/"><span style={{ fontWeight: 'bold' }}>Table Tales</span></NavLink>
-      <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span className="navbar-toggler-icon"></span>
-      </button>
-      <div className="collapse navbar-collapse" id="navbarNav">
-        <ul className="navbar-nav">
-          <li className="nav-item">
-            {isloggedin&& <NavLink className="nav-link text-white" to="/book-table" activeClassName="active" style={{ fontWeight: 'bold' }}>Book Table</NavLink>}
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-nav ml-auto">
-        {!isloggedin && <NavLink className="nav-link text-white" to="/restaurant-login" activeClassName="active" style={{ fontWeight: 'bold' }}>Signin</NavLink>}
-        {!isloggedin && <NavLink className="nav-link text-white" to="/signup" activeClassName="active" style={{ fontWeight: 'bold' }}>Signup</NavLink>}
-        {isloggedin && <NavLink className="nav-link text-white" to="/profile" activeClassName="active" style={{ fontWeight: 'bold' }}>Profile</NavLink>}
-      </div>
-    </nav>
+
+    <Navbar className='navbar' expand="lg">
+      <Navbar.Brand as={NavLink} to="/">Table Tales</Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          {isloggedin && <Nav.Link as={NavLink} to="/book-table">Book Table</Nav.Link>}
+        </Nav>
+        <Nav className="ml-auto">
+          {!(isloggedin || isadmin )&& <Nav.Link as={NavLink} to="/restaurant-login">Signin</Nav.Link>}
+          {!(isloggedin || isadmin ) && <Nav.Link as={NavLink} to="/signup">Signup</Nav.Link>}
+          {isloggedin && <NavDropdown title="Account" id="basic-nav-dropdown">
+            <NavDropdown.Item as={NavLink} to="/profile">View Profile</NavDropdown.Item>
+            <NavDropdown.Item onClick={() => handleLogout()}>Logout</NavDropdown.Item>
+          </NavDropdown>}
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
   );
 }
 
-export default Navbar;
+export default Navigationbar;

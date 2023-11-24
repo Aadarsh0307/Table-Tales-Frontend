@@ -339,7 +339,11 @@ function ProfilePage() {
         })
         
         }
-        <button className='CancelBookingButton' onClick={handleClear}>Clear Past Bookings</button>
+         <div className="LogoutButtonContainer">
+          <button onClick={handleClear} className="LogoutButton">
+            Clear Past Bookings
+          </button>
+        </div>
         {!currentBooking && (
           <p className="NoBookingMessage">No current booking.</p>
         )}
@@ -357,7 +361,11 @@ function ProfilePage() {
             </div>
           ))}
         </div>
-        <button className='CancelBookingButton' onClick={handleLogout}>Logout</button>
+        <div className="LogoutButtonContainer">
+          <button onClick={handleLogout} className="LogoutButton">
+            Logout
+          </button>
+        </div>
       </div>
     </div>
   );

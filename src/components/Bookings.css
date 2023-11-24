@@ -1,0 +1,27 @@
+.booking-container {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  position: relative;
+  margin: auto;
+  background: black;
+  background-color: black;
+}
+
+.booking-heading{
+  padding: 30px;
+  font-size: 50px;
+  color: white;
+  background-color: black;
+  text-align: center;
+}
+
+.row.my-3 {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.booking-card {
+  margin: 0 auto;
+}

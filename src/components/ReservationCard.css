@@ -1,0 +1,64 @@
+.reservation-card {
+  border: 1px solid #ccc;
+  background-color: black;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  margin: 20px auto;
+  transition: 0.3s ease-in-out;
+  color: #ccc;
+}
+
+.reservation-card:hover {
+  transform: scale(1.02);
+  background-color: rgba(150, 255, 255, 0.295);
+}
+  
+.card-body {
+  padding: 20px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.label {
+  color: rgb(255, 255, 255); /* Set the color for labels */
+}
+
+.answer {
+  font-weight: bold;
+  color: rgb(0, 200, 255); /* Set the color for answers */
+}
+
+.EditBookingButton {
+  color: #008CBA;
+  background-color: black;
+  border: 2px solid #008CBA;
+  height: 40px;
+  margin-left: 10px;
+  width: 100px;
+  transition: border-color 0.3s ease;
+  border-radius: 25px;
+  }
+  .EditBookingButton:hover {
+  border-color: #6fdbff;
+  }
+  
+  .CancelBooking-Button {
+  color: #f44336;
+  background-color: black;
+  border: 2px solid #f44336;
+  height: 40px;
+  display: inline-block;
+  margin: 0 10px;
+  width: 100px;
+  transition: border-color 0.3s ease;
+  border-radius: 25px;
+  }
+  
+  .CancelBooking-Button:hover {
+  border-color: #ff837b;
+  }
