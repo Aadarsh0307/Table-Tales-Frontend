@@ -17,7 +17,7 @@ function Footer() {
           <div className="col-md-6">
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
-              <li>Email: abcxyz@example.com</li>
+              <li>Email: contact@tabletales.com</li>
               <li>Phone: +123 456 7890</li>
             </ul>
           </div>
