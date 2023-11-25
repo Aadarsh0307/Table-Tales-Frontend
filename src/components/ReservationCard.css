@@ -3,8 +3,8 @@
   background-color: black;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
-  margin: 20px auto;
+  max-width: 400px;
+  margin: 20px 30px;
   transition: 0.3s ease-in-out;
   color: #ccc;
 }
@@ -31,6 +31,13 @@
 .answer {
   font-weight: bold;
   color: rgb(0, 200, 255); /* Set the color for answers */
+}
+
+
+.answer1 {
+  font-weight: bold;
+  color: rgb(0, 200, 255); /* Set the color for answers */
+  text-transform: capitalize;
 }
 
 .EditBookingButton {

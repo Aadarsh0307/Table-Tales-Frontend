@@ -17,8 +17,10 @@ const Bookings = () => {
     .then((res) =>{
       if(res.status === 200)
       { 
-        console.log(res.data)
-        setData(res.data)
+        const currentDate = new Date();
+        const filteredBookings = res.data.filter((booking) => new Date(booking.Date) >= currentDate);
+
+        setData(filteredBookings);
       }
       
     })

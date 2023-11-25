@@ -172,6 +172,17 @@ cursor: pointer;
 border: 2px solid;
 border-radius: 4px;
 }
+.LogoutButton2{
+
+  font-size: 16px;
+  padding: 15px;
+  margin-right: 10px;
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 24px;
+  background-color: transparent;
+  color: white;
+}
 
 .EditButton {
 color: #1d62eb;
@@ -205,7 +216,10 @@ display: flex;
 justify-content: center;
 margin-top: 20px; 
 }
-
+.cap
+{
+  text-transform: capitalize;
+}
 .SaveButton {
 color: #3bc677;
 background-color: black;

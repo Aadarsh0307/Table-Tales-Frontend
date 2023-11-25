@@ -322,7 +322,7 @@ function ProfilePage() {
                   <h4>Booking ID: {booking._id}</h4>
                   <p><strong>Restaurant:</strong> {booking.RName}</p>
                   <p><strong>Date:</strong> {booking.Date}</p>
-                  <p><strong>Time Slot:</strong> {booking.Slot}</p>
+                  <p className='cap'><strong>Time Slot:</strong> {booking.Slot}</p>
                   <p><strong>Number of Tables:</strong> {booking.Tables}</p>
                 </div>
 
@@ -340,7 +340,7 @@ function ProfilePage() {
         
         }
          <div className="LogoutButtonContainer">
-          <button onClick={handleClear} className="LogoutButton">
+          <button onClick={handleClear} className="LogoutButton2">
             Clear Past Bookings
           </button>
         </div>
@@ -355,7 +355,7 @@ function ProfilePage() {
                 <h4>Booking ID: {booking._id}</h4>
                 <p><strong>Restaurant:</strong> {booking.RName}</p>
                 <p><strong>Date:</strong> {booking.Date}</p>
-                <p><strong>Time Slot:</strong> {booking.Slot}</p>
+                <p className='cap'><strong>Time Slot:</strong> {booking.Slot}</p>
                 <p><strong>Number of Tables Booked:</strong> {booking.Tables}</p>
               </div>
             </div>

@@ -66,7 +66,7 @@ const ReservationCard = ({ id,bid, email, phoneNumber, numberOfPeople, table, da
         </div>
         <div className="detail">
           <span className="label">Time Slot:</span>
-          <span className="answer">{time}</span>
+          <span className="answer1">{time}</span>
         </div>
         <div className="EditButtonContainer">
               

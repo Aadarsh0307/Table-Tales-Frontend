@@ -1,0 +1,74 @@
+.team-card-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 200px;
+    margin-bottom: 80px;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+  }
+  
+  .photocard-container {
+    text-align: center;
+  }
+  
+  .title-teamcontainer {
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .team-card {
+    border: 3px solid #ff000050;
+    border-radius: 125px;
+    padding: 0;
+    margin: 16px;
+    width: 250px;
+    height: 250px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .team-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .team-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .additional-text {
+    color: #ffffff;
+    font-size: 24px;
+    margin-top: 10px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    align-items: center; /* Center the icons vertically */
+    flex-direction: row; /* Stack the icons vertically */
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    color: #ffffff;
+    font-size: 28px;
+    text-decoration: none;
+    margin-bottom: 5px; /* Add some space between the icons */
+  }
+  
+  .social-icons a:hover {
+    color: #007bff;
+  }
+  

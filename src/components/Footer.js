@@ -9,15 +9,15 @@ function Footer() {
           <div className="col-md-6">
             <h5>About Us</h5>
             <h7>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-              vel metus in nunc fringilla sollicitudin. Nullam nec odio vel odio
-              dignissim fermentum.
+            At Table Tales, we are passionate about creating memorable dining 
+            xperiences. Our platform connects diners with a diverse range of restaurants, offering a delightful journey for food enthusiasts. Discover new flavors, explore unique cuisines, 
+            and make every meal a story to remember with Table Tales.
             </h7>
           </div>
           <div className="col-md-6">
             <h5>Contact Us</h5>
             <ul className="list-unstyled">
-              <li>Email: contact@example.com</li>
+              <li>Email: abcxyz@example.com</li>
               <li>Phone: +123 456 7890</li>
             </ul>
           </div>

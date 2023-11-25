@@ -30,6 +30,7 @@ function SearchBar() {
     // You can use this location to filter restaurant results, for example
     console.log('Searching for:', location);
     {isloggedin && navigate('/book-table');}
+    {!isloggedin && navigate('/restaurant-login')}
   };
 
   const searchBarStyle = {
